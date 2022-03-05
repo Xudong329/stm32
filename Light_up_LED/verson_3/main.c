@@ -4,20 +4,20 @@
 int main(void)
 {	
 
-	RCC_APB2ENR|=( (1) << 3 );//RCC, IOPB enable
+	RCC->APB2ENR|=( (1) << 3 );//RCC, IOPB enable
 	
 	//red light
 //	GPIOB->CRL |= ( (1) << (5*4) );//CRL, set IO as output with 10MHz push-pull
 //	GPIOB->ODR &= ~(1<<5);//ODR register enable(red light(PB5))
 	
 	//blue light
-//	GPIOB->CRL |= ( (1) << (1*4) );//CRL, set IO as output with 10MHz push-pull
-//	GPIOB->ODR	&= ~(1<<1);//ODR register enable(blue light(PB1))
+	GPIOB->CRL |= ( (1) << (1*4) );//CRL, set IO as output with 10MHz push-pull
+	GPIOB->ODR	&= ~(1<<1);//ODR register enable(blue light(PB1))
 	
 	
 	//green light
-	GPIOB->CRL |= ( (1) << (0*4) );//CRL, set IO as output with 10MHz push-pull
-	GPIOB->ODR &= ~(1<<0);//ODR register enable(green light(PB0))
+//	GPIOB->CRL |= ( (1) << (0*4) );//CRL, set IO as output with 10MHz push-pull
+//	GPIOB->ODR &= ~(1<<0);//ODR register enable(green light(PB0))
 }
 
 //set: |=(1<<n)
