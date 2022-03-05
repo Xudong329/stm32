@@ -26,4 +26,19 @@ typedef struct
 	unsigned int LCKR;
 }GPIO_UNION;
 
+typedef struct
+{
+	unsigned int CR;
+	unsigned int CFGR;
+	unsigned int CIR;
+	unsigned int APB2RSTR;
+	unsigned int APB1RSTR;
+	unsigned int AHBENR;
+	unsigned int APB2ENR;
+	unsigned int APB1ENR;
+	unsigned int BDCR;
+	unsigned int CSR;
+}RCC_UNION;
+
 #define GPIOB ((GPIO_UNION*)GPIOB_BASE)
+#define RCC 	((RCC_UNION*)RCC_BASE)
